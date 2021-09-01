@@ -16,10 +16,7 @@ public class ChannelMessage {
 
     public void onMessage(ChannelMessageEvent event) {
         if (event.getMessage().equalsIgnoreCase("*forcestart") && event.getPermissions().contains(CommandPermission.MODERATOR)) WideRoulette.wideTime(event.getUser().getName());
-        if (event.getMessage().equalsIgnoreCase("*fakestart") && event.getPermissions().contains(CommandPermission.MODERATOR)) {
-            WideRoulette.wideTime(event.getUser().getName());
-            WideRoulette.wideEmote = null;
-        }
+        if (event.getMessage().equalsIgnoreCase("*fakestart") && event.getPermissions().contains(CommandPermission.MODERATOR)) WideRoulette.wideTimeButFake(event.getUser().getName());
         if (WideRoulette.wideEmote != null && event.getMessage().equalsIgnoreCase(WideRoulette.wideEmote)) {
             System.out.println(event.getUser().getName() + " HAS LOST THE WIDE ROULETTE 4TOWN");
             Bot.twitchClient.getChat().sendMessage("acoldone", "4Town " + event.getUser().getName());
