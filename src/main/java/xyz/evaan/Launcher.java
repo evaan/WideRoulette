@@ -1,5 +1,7 @@
 package xyz.evaan;
 
+import com.github.philippheuer.events4j.simple.SimpleEventHandler;
+
 public class Launcher {
     public static void main(String[] args) {
         if (args.length < 2) {
@@ -16,6 +18,7 @@ public class Launcher {
         WideRoulette.emotes.add("widepeepoBlanket");
         WideRoulette.emotes.add("widepeepoHappy");
         Bot wideRoulette = new Bot(args[0], args[1]);
+        Bot.eventHandler = Bot.twitchClient.getEventManager().getEventHandler(SimpleEventHandler.class);
         wideRoulette.registerEvents();
         System.out.println("WIDE ROULETTE BOT IS NOW READY");
     }

@@ -12,6 +12,7 @@ public class WideRoulette {
         System.out.println("A WIDE ROULETTE HAS BEEN REDEEMED BY " + redeemer);
         Collections.shuffle(emotes);
         wideEmote = emotes.get(0);
-        Bot.twitchClient.getChat().sendMessage("acoldone", wideEmote + " is now the losing emote, good luck!");
+        Bot.twitchClient.getChat().sendMessage("acoldone", wideEmote + " is now the losing emote, good luck! WAYTOOWIDE");
+        new TimeOutThread().start();
     }
 }

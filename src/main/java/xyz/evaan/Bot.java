@@ -9,6 +9,7 @@ import com.github.twitch4j.chat.events.channel.ChannelMessageEvent;
 public class Bot {
     public static TwitchClient twitchClient;
     public static OAuth2Credential login;
+    public static SimpleEventHandler eventHandler;
 
     public Bot(String identityProvider, String accessToken) {
         login = new OAuth2Credential(identityProvider, accessToken);
@@ -22,7 +23,6 @@ public class Bot {
     }
 
     public void registerEvents() {
-        SimpleEventHandler eventHandler = twitchClient.getEventManager().getEventHandler(SimpleEventHandler.class);
         ChannelMessage channelMessage = new ChannelMessage(eventHandler);
         RewardRedeem rewardRedeem = new RewardRedeem(eventHandler);
     }
