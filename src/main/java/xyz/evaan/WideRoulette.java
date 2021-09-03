@@ -22,7 +22,9 @@ public class WideRoulette {
     }
 
     public static void wideTimeButFake(String redeemer) {
+        Collections.shuffle(emotes);
+        String dontBreakTheExistingWideRoulette = emotes.get(0);
         System.out.println("A WIDE FAKE ROULETTE HAS BEEN REDEEMED BY " + redeemer);
-        Bot.twitchClient.getChat().sendMessage("acoldone", wideEmote + " is now the losing emote, good luck! WAYTOOWIDE");
+        Bot.twitchClient.getChat().sendMessage("acoldone", dontBreakTheExistingWideRoulette + " is now the losing emote, good luck! WAYTOOWIDE");
     }
 }
